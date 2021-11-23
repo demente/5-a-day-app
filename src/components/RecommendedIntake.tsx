@@ -1,6 +1,12 @@
 import React from 'react';
 import {recommendedIntake} from "../domain/data";
 import {NT, Nutrition} from "../domain/types";
+import {
+  AmountBarBackground,
+  AmountBarFilled, Name,
+  RecommendedIntakeContainer,
+  RecommendedIntakeRow
+} from "./RecommendedIntake.style";
 
 const RecommendedIntake = (props: { totalNutrition: Nutrition }): JSX.Element => {
 
@@ -45,13 +51,14 @@ const RecommendedIntake = (props: { totalNutrition: Nutrition }): JSX.Element =>
     },
   ];
 
-  return (<div>
+  return (<RecommendedIntakeContainer>
         {percentageFromRecommended.map((item: NT) => (
-            <div>
-              {item.name}: {Math.round(item.value)} %
-            </div>
+            <RecommendedIntakeRow>
+              <Name>{item.name}:</Name>
+              <AmountBarBackground><AmountBarFilled defaultValue={item.value}> {Math.round(item.value)} %</AmountBarFilled></AmountBarBackground>
+            </RecommendedIntakeRow>
         ))}
-      </div>
+      </RecommendedIntakeContainer>
   );
 }
 
