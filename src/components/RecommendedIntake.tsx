@@ -5,7 +5,6 @@ import {
   AmountBarBackground,
   AmountBarFilled, Name,
   RecommendedIntakeContainer,
-  RecommendedIntakeRow
 } from "./RecommendedIntake.style";
 
 const RecommendedIntake = (props: { totalNutrition: Nutrition }): JSX.Element => {
@@ -53,10 +52,10 @@ const RecommendedIntake = (props: { totalNutrition: Nutrition }): JSX.Element =>
 
   return (<RecommendedIntakeContainer>
         {percentageFromRecommended.map((item: NT) => (
-            <RecommendedIntakeRow>
-              <Name>{item.name}:</Name>
-              <AmountBarBackground><AmountBarFilled defaultValue={item.value}> {Math.round(item.value)} %</AmountBarFilled></AmountBarBackground>
-            </RecommendedIntakeRow>
+            <tr>
+              <td><Name>{item.name}</Name></td>
+              <td><AmountBarBackground><AmountBarFilled defaultValue={item.value}>{`${Math.round(item.value)} %`}</AmountBarFilled></AmountBarBackground></td>
+            </tr>
         ))}
       </RecommendedIntakeContainer>
   );

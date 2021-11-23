@@ -15,14 +15,10 @@ const ImageContainer = styled.div`
     display: inline-block;
 
     img {
-      transform: translate(-50%, -50%);
-      position: relative;
-      width: 50%;
-      top: 40%;
-      left: 28%;
+      border-radius: 50%;
+      width: inherit;
     }
 `;
-
 
 const ImageSkew = styled.div`
   display: inline-block;
