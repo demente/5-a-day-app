@@ -27,6 +27,12 @@ interface Food {
   nutritionInPortion: Nutrition;
 }
 
-export type {Food, Nutrition};
+interface NT {
+  value: number;
+  name: string
+};
+
+
+export type {Food, Nutrition, NT};
 
 export {FoodType};
